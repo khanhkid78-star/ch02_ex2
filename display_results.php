@@ -7,6 +7,9 @@
     $years = filter_input(INPUT_POST, 'years',
         FILTER_VALIDATE_INT);
 
+    $date = date('d/m/y');
+    $date_message = "This calculation was done on $date";
+
     // validate investment
     if ($investment === FALSE ) {
         $error_message = 'Investment must be a valid number.'; 
@@ -68,6 +71,8 @@
 
         <label>Future Value:</label>
         <span><?php echo $future_value_f; ?></span><br>
+
+        <p><?php echo $date_message; ?></p>
     </main>
 </body>
 </html>
